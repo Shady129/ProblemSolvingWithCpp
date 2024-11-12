@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <string>
-#include <vector>
 
 using namespace std;
 
@@ -18,7 +16,6 @@ string ReadWord()
     return Word;
 
 }
-
 
 
 short CountWord(string Word)
