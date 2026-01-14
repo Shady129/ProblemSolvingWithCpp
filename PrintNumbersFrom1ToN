@@ -1,0 +1,76 @@
+// Create a C++ program that follows the Single Responsibility Principle.
+// The program should read an integer from the user, generate numbers from 1
+// to the entered value using one function, store them in a vector,
+// and print the result using a separate function.
+
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int ReadNumber()
+{
+	int Number;
+
+	cout << "Enter the number: ";
+	cin >> Number;
+	
+
+	return Number;
+}
+
+
+
+
+vector<int>GenrateNumbers(int Number)
+{
+	vector<int> Numbers;
+
+	for (int i = 1; i <= Number; i++)
+	{
+		
+
+		Numbers.push_back(i);
+		
+	}
+
+	return Numbers;
+}
+
+
+
+void PrintNumbers(const vector<int>& Numbers)
+{
+
+	for (int num : Numbers)
+	{
+
+		cout << num << endl;
+	}
+
+}
+
+
+
+
+
+void RunCode()
+{
+
+	int Number = ReadNumber();
+	vector <int> Numbers = GenrateNumbers(Number);
+	PrintNumbers(Numbers);
+}
+
+
+
+int main()
+{
+
+	RunCode();
+
+	return 0;
+}
+
