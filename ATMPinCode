@@ -1,0 +1,72 @@
+// Write a program that asks the user to enter a PIN code.
+// The program should keep asking until the correct PIN code is entered.
+// If the PIN code is correct, display the user's balance.
+
+
+
+#include <iostream>
+
+
+using namespace std;
+
+
+string ReadPinCode()
+{
+
+	string PinCode;
+
+	cout << "Enter Your Pin Code: ";
+
+	cin >> PinCode;
+
+	return PinCode;
+}
+
+
+
+bool Login()
+{
+	string PinCode;
+	do
+	{
+		PinCode = ReadPinCode();
+
+		if (PinCode == "1234")
+		{
+
+			return true;
+		}
+		else
+		{
+			cout << "Wrong Code";
+			system("color 4F");
+		}
+
+
+	} while (PinCode != "1234");
+
+	return false;
+
+}
+
+
+
+
+void RunCode()
+{
+
+	if (Login())
+	{
+		system("color 2F");
+		cout << "Your balance is 75000";
+	}
+}
+
+
+int main()
+{
+
+	RunCode();
+
+	return 0;
+}
