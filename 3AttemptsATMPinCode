@@ -1,0 +1,83 @@
+// Problem:
+// Write a C++ program that asks the user to enter a PIN code.
+// The user is allowed a maximum of 3 attempts to enter the correct PIN.
+// If the correct PIN is entered within the allowed attempts, display the user's balance.
+// Otherwise, display a message indicating that the card has been blocked.
+
+
+
+
+#include <iostream>
+
+
+using namespace std;
+
+
+string ReadPinCode()
+{
+
+	string PinCode;
+
+	cout << "Enter Your Pin Code: ";
+
+	cin >> PinCode;
+
+	return PinCode;
+}
+
+
+
+bool Login()
+{
+	string PinCode;
+	int Counter = 0;
+
+	while(Counter < 3 )
+	{
+
+		Counter++;
+		PinCode = ReadPinCode();
+
+		if (PinCode == "1234")
+		{
+
+			return true;
+		}
+		else
+		{
+			cout << "\nWrong Code\n";
+			system("color 4F");
+		}
+
+
+	}
+
+	return false;
+
+}
+
+
+
+
+void RunCode()
+{
+
+	if (Login())
+	{
+		system("color 2F");
+		cout << "Your balance is 75000";
+	}
+	else
+	{
+		cout << "Card has been blocked, Please call customer service for support";
+	}
+}
+
+
+int main()
+{
+
+	RunCode();
+
+	return 0;
+}
